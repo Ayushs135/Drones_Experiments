@@ -69,12 +69,9 @@ Polygons are converted to binary raster masks using `cv2.fillPoly` (crack pixels
 * Windows / Linux / macOS (CPU only)
 
 ### Virtual Environment Setup
-From the project directory:
+From the repository root:
 
 ```bash
-# Navigate to the baseline folder
-cd classical_crack_baseline
-
 # Create virtual environment
 python -m venv venv
 
@@ -114,7 +111,7 @@ jupyter notebook classical_crack_detection.ipynb
 ### Generated Artifacts
 
 ```text
-classical_crack_baseline/results/
+results/
 ├── highlighted/
 │   ├── sample_01_comparison.png   # 5-panel: Original | GT | Canny | Enhanced | Overlay
 │   ├── sample_02_comparison.png
@@ -148,16 +145,18 @@ classical_crack_baseline/results/
 
 ---
 
-## 7. Directory Structure
+## 7. Repository Directory Structure
 
 ```text
-classical_crack_baseline/
-├── venv/                              # Isolated Python 3.11 virtual environment
-├── data/                              # Extracted crack-seg dataset (train/val/test)
-├── results/
-│   ├── highlighted/                   # High-contrast overlay and comparison figures
-│   ├── metrics/                       # CSV metrics table, confusion matrix, bar chart
-│   └── visualizations/               # Failure mode error analyses
-├── classical_crack_detection.ipynb    # Fully executed Jupyter Notebook with outputs
-└── README.md                          # Experiment documentation
+Drones_Experiments/
+├── .gitignore                         # Excludes large data archives, venv, and checkpoints
+├── README.md                          # Comprehensive experiment report and guide
+├── classical_crack_detection.ipynb    # Executable Jupyter Notebook (with pre-run outputs)
+├── crack-seg.zip                      # Source dataset archive
+├── data/                              # Extracted images & YOLO labels (git-ignored)
+├── venv/                              # Virtual environment (git-ignored)
+└── results/                           # Evaluation outputs and visualizations
+    ├── highlighted/                   # Visual comparisons with crack overlays
+    ├── metrics/                       # CSV metrics table, confusion matrix, bar chart
+    └── visualizations/               # Error mode analyses
 ```
